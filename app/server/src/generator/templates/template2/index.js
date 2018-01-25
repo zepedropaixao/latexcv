@@ -6,8 +6,8 @@ function template2({ profile, schools, jobs, projects, skills, awards }) {
     ${generateHeader()}
     \\begin{document}
     ${generateProfileSection(profile)}
-    ${generateEducationSection(schools)}
     ${generateExperienceSection(jobs)}
+    ${generateEducationSection(schools)}
     ${generateSkillsSection(skills)}
     ${generateProjectsSection(projects)}
     ${generateAwardsSection(awards)}
@@ -44,7 +44,9 @@ function generateProfileSection(profile) {
   const phoneLine = phoneNumber ? `{\\faMobile\\ ${phoneNumber}}` : ''
   const addressLine = address ? `{\\faMapMarker\\ ${address}}` : ''
   const linkLine = link ? `{\\faLink\\ ${link}}` : ''
-  const info = [emailLine, phoneLine, addressLine, linkLine]
+  const additionalLink1 = `{\\faLink\\ linkedin.com/zepedropaixao}`
+  const additionalLink2 = `{\\faLink\\ paixao.me}`
+  const info = [emailLine, phoneLine, addressLine, linkLine, additionalLink1, additionalLink2]
     .filter(Boolean)
     .join(' | ')
 
@@ -55,7 +57,7 @@ function generateProfileSection(profile) {
     \\begin{center}
     ${nameLine}
     \\vspace{2mm}
-    ${info}
+	  \\headersocialstyle{${info}}
     \\end{center}
   `
 }
@@ -200,7 +202,7 @@ function generateAwardsSection(awards) {
   }
 
   return source`
-    \\cvsection{Honors \\& Awards}
+    \\cvsection{Achievements \\& Awards}
     \\begin{cvhonors}
       ${awards.map(award => {
         const { name, details, date, location } = award

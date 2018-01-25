@@ -1,8 +1,8 @@
 import Koa from 'koa';  
 import serve from 'koa-static';
-import bodyParser from 'koa-bodyparser'
+import bodyParser from 'koa-bodyparser';
 import path from 'path';  
-import middl from './app/server/src/middleware'
+import middl from './app/server/src/middleware';
 import expose from './expose.js';
 const {__dirname} = expose;
 

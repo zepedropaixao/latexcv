@@ -36,11 +36,11 @@ const initialState = {
   scale: 1.5,
   isPrinting: false,
   schoolCount: 1,
-  jobCount: 1,
-  jobDuties: [1],
-  projectCount: 1,
-  skillCount: 1,
-  awardCount: 1,
+  jobCount: 5,
+  jobDuties: [2, 5, 3, 1, 1],
+  projectCount: 5,
+  skillCount: 3,
+  awardCount: 4,
   modal: {
     active: false,
     src: null
